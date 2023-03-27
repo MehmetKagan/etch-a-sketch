@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    height: 288px;
+    width: 288px;
+    display:flex;
+    flex-wrap: wrap;
+   
+}
+#container div {
+height: 16px;
+width: 16px;
+background-color: white;
+border: solid 1px black;
+}

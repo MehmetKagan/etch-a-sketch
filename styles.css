@@ -1,7 +1,12 @@
 body {
     display: flex;
     justify-content: center;
-    
+    margin-top: 25px;
+    background-color: #c1ddfb;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-family: monospace;
+    font-variant: all-small-caps;
 }
 
 #container {
@@ -9,11 +14,14 @@ body {
     height: 624px;
     display:flex;
     flex-wrap: wrap;
-   border:solid 1px black;
+    border:solid 25px #FFE5F1;
+    border-radius: 15px;
+    box-shadow: 5px 5px white;
+   
 }
 
 .colored {
-    background-color: grey;
+    background-color:black;
 }
 
 
@@ -24,6 +32,39 @@ body {
     /* Set the width of each grid item to 30px */
     height: 39px;
     /* Set the height of each grid item to 30px */
-    border: 0.5px solid black;
+    border: 0.5px solid rgb(150, 148, 148);
     /* Add a 1px black border to each grid item */
+   
+}
+
+
+.container-with-paragraph {
+    text-align: center;
+    margin-top: -75px;
+}
+
+.container-with-paragraph p {
+    font-size: 72px;
+    margin-bottom: 8px;
+    color:white;
+    text-shadow: 2px 3px pink;
+} 
+
+button, input{
+    color: #ADA2FF;
+    height: 45px;
+    width: 200px;
+    margin-top: 80px;
+    margin-right: 50px;
+    font-weight: bold;
+    font-family: monospace;
+    font-variant: all-small-caps;
+    font-size: 29px;
+    background-color: #fff8e1;
+    border: solid 4px white;
+    border-radius: 5px;
+    box-shadow: 4px 4px #FFE5F1;
+    }
+.grid {
+    background-color: white;
 }

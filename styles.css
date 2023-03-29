@@ -14,16 +14,18 @@ body {
     height: 624px;
     display:flex;
     flex-wrap: wrap;
-    border:solid 25px #FFE5F1;
+    border:solid 35px #FFE5F1;
     border-radius: 15px;
-    box-shadow: 5px 5px white;
+    box-shadow: 6px 6px white;
    
 }
 
 .colored {
-    background-color:black;
+    background-color:#3B475E;
 }
-
+.black {
+    background-color: black;
+}
 
 #container div {
     box-sizing: border-box;
@@ -37,15 +39,19 @@ body {
    
 }
 
-
+.slider-container {
+    margin-top: 100px;
+    text-align: center;
+    margin-right: 50px;
+}
 .container-with-paragraph {
     text-align: center;
     margin-top: -75px;
 }
 
-.container-with-paragraph p {
+p {
     font-size: 72px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     color:white;
     text-shadow: 2px 3px pink;
 } 
@@ -54,8 +60,7 @@ button, input{
     color: #ADA2FF;
     height: 45px;
     width: 200px;
-    margin-top: 80px;
-    margin-right: 50px;
+    margin-top: 50px;
     font-weight: bold;
     font-family: monospace;
     font-variant: all-small-caps;
@@ -64,7 +69,15 @@ button, input{
     border: solid 4px white;
     border-radius: 5px;
     box-shadow: 4px 4px #FFE5F1;
+    text-shadow: 2px 2px white;
+    
     }
 .grid {
     background-color: white;
+}
+
+#gridCountPara {
+    margin-top: -25px;
+    margin-bottom: -45px;
+    text-align: center;
 }

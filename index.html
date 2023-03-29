@@ -12,15 +12,20 @@
 <body>
 
 <div class="slider-container">
-    <input type="range" min="2" max="48" value="24" class="slider">
+     <p id="gridCountPara"></p>
+     <br>
+    <input type="range" min="1" max="64" value="16" class="slider" id="slider"
+     oninput="newDivCount() ,values(), changeSizes(), coloring() ">
     <br>
     <input type="color">
     <br>
-    <button>Black</button>
+    <button id="black">Black</button>
     <br>
-    <button>Grayscale</button>
+    <button id="grayscale">Grayscale</button>
     <br>
-    <button>Random</button>
+    <button id="random">Random</button>
+    <br>
+    <button id="reset">Reset</button>
 
 </div>
 <div class="container-with-paragraph">

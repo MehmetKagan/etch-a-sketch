@@ -37,6 +37,7 @@ function coloring() {
   childDivs.forEach(div => {
   div.addEventListener('mouseover', () => {
     div.classList.add('colored');
+    div.style.backgroundColor = "#3B475E";
     div.classList.remove('grid');
   });
 });
@@ -53,6 +54,7 @@ let childDivs = container.querySelectorAll("div");
   childDivs.forEach(div => {
   div.addEventListener('mouseover', () => {
     div.classList.add('colored');
+    div.style.backgroundColor = "#3B475E";
     div.classList.remove('grid');
   });
 });
@@ -61,22 +63,23 @@ let childDivs = container.querySelectorAll("div");
 const resetButton = document.getElementById("reset");
 const coloredDivs = container.getElementsByClassName("colored");
 const blackDivs = container.getElementsByClassName("black");
+const randomDivs = container.getElementsByClassName("randomize");
+const addShadowDivs = container.getElementsByClassName("addShadow")
 function removeGridClass() {
-  const coloredArray = Array.from(coloredDivs);
-  const blackarray = Array.from(blackDivs);
-  const combinedArray = Array.from(coloredDivs).concat(Array.from(blackDivs));
+  const combinedArray = Array.from(coloredDivs).concat(Array.from(blackDivs), Array.from(randomDivs), Array.from(addShadowDivs));
   for (const grids of combinedArray)
   { 
     grids.classList.remove('black');
     grids.classList.remove('colored');
+    grids.classList.remove('randomize');
+    grids.classList.remove('addShadow');
     grids.classList.add('grid');
+    grids.style.backgroundColor = '#FFFFFF'
 }
 };
 resetButton.addEventListener("click", removeGridClass)
   
 //---------------Black Button-------------------//
-
-
 
 const blackButton = document.getElementById("black");
 function blackIt() { 
@@ -85,9 +88,49 @@ let childDivs = container.querySelectorAll("div");
     div.addEventListener('mouseover', () => {
       div.classList.remove('grid');
       div.classList.remove('colored');
+      div.classList.remove('randomize')
+      div.classList.remove("addShadow");
       div.classList.add('black')
-   
+      div.style.backgroundColor ="#000000"
   });
 });
 }
 blackButton.addEventListener("click", blackIt);
+
+//---------------addShadow Button-------------------//
+/*
+ const addShadowButton = document.getElementById("addShadow");
+function addShadow() { 
+let childDivs = container.querySelectorAll("div");
+  childDivs.forEach(div => {
+    div.addEventListener('mouseover', () => {
+      div.classList.remove('grid');
+      div.classList.remove('colored');
+      div.classList.remove('randomize')
+      div.classList.remove('black')
+      div.classList.add("addShadow")
+      div.style.
+  });
+});
+}
+addShadowButton.addEventListener("click", addShadow); 
+*/
+//----------Random Button-----------//
+
+const randomButton = document.getElementById("random");
+function randomColor() { 
+let childDivs = container.querySelectorAll("div");
+  childDivs.forEach(div => {
+    div.addEventListener('mouseover', () => {
+      div.classList.remove('grid');
+      div.classList.remove('colored');
+      div.classList.remove('black');
+      div.classList.remove("addShadow");
+      div.classList.add('randomize');
+      div.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+   
+  });
+});
+}
+
+randomButton.addEventListener("click", randomColor);  

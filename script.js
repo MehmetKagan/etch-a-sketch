@@ -1,6 +1,5 @@
 const container = document.getElementById("container");
 //-------------------Slider-------------------//
-
 const slider = document.getElementById("slider");
 const gridCountPara = document.getElementById("gridCountPara");
 gridCountPara.textContent = `${slider.value}x${slider.value}`;
@@ -37,7 +36,7 @@ function coloring() {
   childDivs.forEach(div => {
   div.addEventListener('mouseover', () => {
     div.classList.add('colored');
-    div.style.backgroundColor = "#3B475E";
+    div.style.backgroundColor = `${colorPicker.value}`;
     div.classList.remove('grid');
   });
 });
@@ -54,25 +53,46 @@ let childDivs = container.querySelectorAll("div");
   childDivs.forEach(div => {
   div.addEventListener('mouseover', () => {
     div.classList.add('colored');
-    div.style.backgroundColor = "#3B475E";
+    div.style.backgroundColor = `${colorPicker.value}`;
     div.classList.remove('grid');
   });
 });
+
+//------------Color Picker------------//
+const colorPicker = document.getElementById('color-picker');
+colorPicker.value = '#3B475E';
+function pickColor() {
+  let childDivs = container.querySelectorAll("div");
+  childDivs.forEach(div => {
+    div.addEventListener('mouseover', () => {
+      div.classList.remove('grid');
+      div.classList.remove('colored');
+      div.classList.remove('randomize')
+      div.classList.remove("addShadow");
+      div.classList.remove('black')
+      div.classList.add('picked-color')
+      div.style.backgroundColor = `${colorPicker.value}`;
+  });
+});
+}
+colorPicker.addEventListener('input', pickColor);
 
 //------------Reset Button-----------//
 const resetButton = document.getElementById("reset");
 const coloredDivs = container.getElementsByClassName("colored");
 const blackDivs = container.getElementsByClassName("black");
 const randomDivs = container.getElementsByClassName("randomize");
-const addShadowDivs = container.getElementsByClassName("addShadow")
+const addShadowDivs = container.getElementsByClassName("addShadow");
+const pickedColorDivs = container.getElementsByClassName('picked-color');
 function removeGridClass() {
-  const combinedArray = Array.from(coloredDivs).concat(Array.from(blackDivs), Array.from(randomDivs), Array.from(addShadowDivs));
+  const combinedArray = Array.from(coloredDivs).concat(Array.from(blackDivs), Array.from(randomDivs), Array.from(addShadowDivs), Array.from(pickedColorDivs));
   for (const grids of combinedArray)
   { 
     grids.classList.remove('black');
     grids.classList.remove('colored');
     grids.classList.remove('randomize');
     grids.classList.remove('addShadow');
+    grids.classList.remove('picked-color');
     grids.classList.add('grid');
     grids.style.backgroundColor = '#FFFFFF'
 }
@@ -90,6 +110,7 @@ let childDivs = container.querySelectorAll("div");
       div.classList.remove('colored');
       div.classList.remove('randomize')
       div.classList.remove("addShadow");
+      div.classList.remove('picked-color');
       div.classList.add('black')
       div.style.backgroundColor ="#000000"
   });
@@ -126,6 +147,7 @@ let childDivs = container.querySelectorAll("div");
       div.classList.remove('colored');
       div.classList.remove('black');
       div.classList.remove("addShadow");
+      div.classList.remove('picked-color');
       div.classList.add('randomize');
       div.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
    

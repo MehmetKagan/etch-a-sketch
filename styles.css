@@ -50,7 +50,7 @@ p {
 } 
 
 button, input{
-    color: #ADA2FF;
+    color: #bab1ff;
     height: 45px;
     width: 200px;
     margin-top: 50px;
@@ -63,7 +63,12 @@ button, input{
     border-radius: 5px;
     box-shadow: 4px 4px #FFE5F1;
     text-shadow: 2px 2px white;
+    transition: background-color 0.4s ease;
     
+    }
+    button:hover {
+        background-color:#e1f2ff ;
+        
     }
 .grid {
     background-color: white;
@@ -73,4 +78,25 @@ button, input{
     margin-top: -25px;
     margin-bottom: -45px;
     text-align: center;
+}
+
+#slider {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: 2px 2px #ffe5f1;;
+    background: #fff8e1;
+    border-radius: 5px;
+    border: 0px;
+    height: 11px;
+
+}
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 21px;
+    height: 21px;
+    background-color: #bab1ff;
+    cursor: auto;
+    border: 1px solid #a69bed;
+    border-radius: 50%;
 }
